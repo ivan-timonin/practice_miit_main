@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Items</title>
+</head>
+<body>
+    <h1>Items List</h1>
+    <table border="1">
+        <tr><th>ID</th><th>Name</th><th>Description</th><th>Actions</th></tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>
+                <a href="{{ url_for('edit', id=item.id) }}">Edit</a>
+                <a href="{{ url_for('delete', id=item.id) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Add Item</h2>
+    <form method="POST" action="{{ url_for('add') }}">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="description" placeholder="Description">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
