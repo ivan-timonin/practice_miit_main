@@ -1,1 +1,12 @@
-
+flask-crud-app/
+├── app/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── db/
+│   └── init.sql
+├── nginx/
+│   ├── nginx.conf
+│   ├── Dockerfile
+│   └── certs/           (создадим автоматически)
+└── docker-compose.yml
